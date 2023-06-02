@@ -11,5 +11,9 @@
             "request": "launch",
             "platform": "android"
         }
+    ],
+    "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
     ]
 }

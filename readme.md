@@ -14,12 +14,30 @@ cd ChatApp
 yarn add axios 
 ##install Geoloation 
 yarn add react-native-geolocation-service
+
+##  install dotnet to hidden api key 
+yarn add react-native-dotenv
+```
+Configuring react-native-dotenv with Bable
+```bash
+## Add the following to your .babel.config.js file:
+module.exports = function(api) {
+  api.cache(true);
+  return {
+    presets: ['module:metro-react-native-babel-preset'],
+    plugins: ['module:react-native-dotenv']
+  };
+};
 ```
 
 # Add permission of using location 
 In AndroidManifest.xml add 
 ```
+<uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 # Run
 
@@ -29,19 +47,6 @@ npx react-native start
 ```
 # 
 
-# Work flow 
-
-1. Install all dependency 
-2. Get device location by naive react-native api
-3. Get Gcode from OpenWeather API
-4. Get Weather from OpenWeather API with Gcode 
-
-# Hours 
-3 hr
-
-# Challenges
-
-Check the result of each asynchronous API call 
 
 #Video Demo
 

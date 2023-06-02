@@ -27,7 +27,9 @@ import Geolocation from 'react-native-geolocation-service';
 import InfoDialog from './InformationDialog';
 import Voice from '@react-native-voice/voice';
 import { Configuration, OpenAIApi } from "openai";
-const APIKEY = "41a352ce12d5ca52a662dde9b6b686e8";
+import {OPENWEATHER_API_KEY, OPENAI_API_KEY} from '@env'
+//const OPENAI_API_KEY = 'process.env.OPENAI_API_KEY';
+//const WEATHER_API_KEY = 'process.env.WEATHER_API_KEY';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -52,7 +54,7 @@ class App extends React.Component {
     this.speechResultsHandler = this.speechResultsHandler.bind(this);
     this.sentMsgToChatGPT = this.sentMsgToChatGPT.bind(this);
     const configuration = new Configuration({
-      apiKey: OPENAIAPIKEY,
+      apiKey: OPENAI_API_KEY,
     });
     this.openai = new OpenAIApi(configuration);
   }
@@ -62,8 +64,6 @@ class App extends React.Component {
     Voice.onSpeechStart = this.speechStartHandler;
     Voice.onSpeechEnd = this.speechEndHandler;
     Voice.onSpeechResults = this.speechResultsHandler;
-    /*add event listener to Voice*/ 
-
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -188,7 +188,7 @@ class App extends React.Component {
    */
   async getWeather() {
     const {latitude, longitude} = this.state.location;
-    const url = `https://api.openweathermap.org/data/2.5/weather?units=imperial&lat=${latitude}&lon=${longitude}&appid=${APIKEY}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?units=imperial&lat=${latitude}&lon=${longitude}&appid=${OPENWEATHER_API_KEY}`;
     try {
       await axios.get(url)
       .then(response => {

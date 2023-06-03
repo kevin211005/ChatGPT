@@ -66,10 +66,9 @@ https://openweathermap.org/
 
 # Demo Video 
 
+https://github.com/kevin211005/ChatGPT/assets/86145579/c306ef04-235b-4fc8-a808-f52af79f409f
 
 
-
-https://user-images.githubusercontent.com/86145579/236086065-454c3958-418a-497c-86b2-df26592e0b46.mp4
 
 
 

@@ -5,7 +5,8 @@
 # API Keys
 #
 .env
-
+#Vscode 
+.vscode
 # Xcode
 #
 build/
